@@ -29,17 +29,60 @@ function NewsFeed() {
       })
     }
 
+    const styleDiv = {
+      borderStyle: 'solid', 
+      padding: '0.5rem', 
+      margin: '0.5rem'
+    }
+
+    const styleSpan = {
+      fontSize: '2rem'
+    }
+
+    
+
   
  return (
    <div>
       <MakePost></MakePost>
-   {newsFeedPosts.map(post => {
+   {newsFeedPosts.slice(0).reverse().map(post => {
+     if (post.bouncer === 'Great') {
+      var badge = {
+        color: 'white', 
+        backgroundColor: 'green', 
+        padding: '0.2rem'
+      }
+     }
+     if (post.bouncer === 'Good') {
+      var badge = {
+        color: 'black', 
+        backgroundColor: '#9FFF33', 
+        padding: '0.2rem'
+      }
+     }
+     if (post.bouncer === 'Fine') {
+      var badge = {
+        color: 'black', 
+        backgroundColor: '#FFC300', 
+        padding: '0.2rem'
+      }
+     }
+     if (post.bouncer === 'Bad') {
+      var badge = {
+        color: 'white', 
+        backgroundColor: 'red', 
+        padding: '0.2rem'
+      }
+     }
+     
+
                  return (
-                   <div key={post._id}>{post.username}: At {(post.date)}, 
-                       <strong>
+                   <div style={styleDiv} key={post._id}> {(post.date)} 
+                       <div style={styleSpan}>{post.username}: <strong>
                          <Link to={`/bars/${post.urlName}`}>{post.barName}</Link>:  
                          </strong>
-                         <span> had a {post.time} minute wait</span>. Comment: {post.comment}. Bouncer experience: {post.bouncer}.
+                         <span> had a {post.time} minute wait</span>.</div>
+                         <div> {post.comment}</div><div> Bouncer experience: <span style={badge}>{post.bouncer}</span>.</div>
                    </div>)}
  )}</div>
 
