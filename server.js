@@ -12,7 +12,7 @@ app.use(express.static(path.join(__dirname, './client')));
 app.use(cors())
 
 /*React root*/
-app.get("*", (req, res) => {
+app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname + "./client/public/index.html"));
   });
 
@@ -25,7 +25,7 @@ app.get("*", (req, res) => {
     );
     next();
     });
-    app.options("*", cors());
+    app.options("/*", cors());
 
 // Define middleware here - so that you can pass raw json into the body 
 app.use(express.urlencoded({ extended: true }));
