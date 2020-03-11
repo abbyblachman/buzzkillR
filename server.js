@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
+var cors = require('cors')
 
 const routes = require('./routes');
 const app = express();
@@ -8,6 +9,7 @@ const PORT = process.env.PORT || 3002;
 
 /*Adds the react production build to serve react requests*/
 app.use(express.static(path.join(__dirname, './client')));
+app.use(cors())
 
 /*React root*/
 app.get("*", (req, res) => {
