@@ -11,14 +11,16 @@ const PORT = process.env.PORT || 3002;
 
 app.use(cors())
 
-/*React root*/
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-});
+
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("public"));
 }
+
+/*React root*/
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
+});
 
   app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
