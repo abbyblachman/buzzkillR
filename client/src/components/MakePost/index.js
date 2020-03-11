@@ -113,9 +113,9 @@ function MakePost() {
   return (
     <div>
 
-        <p>Entering information about: {barName}</p>
+       
         <form className="form" action="/action_page.php">
-        <label for="bars">Choose a bar:</label>
+        <label for="bars">Where are you checking in?</label>
           <input value={barName} name="barName" type="text" placeholder="bar name" onChange={handleBarChange}>
           {/* <option value="Select an option">Select an option</option>
             <option value="Danny's">Danny's</option>

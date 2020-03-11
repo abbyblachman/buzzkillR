@@ -1,6 +1,7 @@
 
 import React, {useState, useEffect} from "react";
 import {Link} from 'react-router-dom';
+import BarList from "../components/BarList";
 import MakePost from '../components/MakePost';
 import axios from "axios";
 import SimpleMap from "./../components/map";
@@ -24,10 +25,11 @@ function NewsFeed() {
     axios
       .get("http://localhost:3002/api/posts")
       .then(res => {
-        console.log(res.data)
+        // console.log(res.data)
         setNewsFeedPosts(res.data)
       })
     }
+    
 
     const styleDiv = {
       borderStyle: 'solid', 
@@ -43,7 +45,12 @@ function NewsFeed() {
 
   
  return (
+
+
+     
+
    <div style = {{paddingTop: 100, marginLeft: 175}}>
+   <BarList></BarList>
       <MakePost></MakePost>
    {newsFeedPosts.slice(0).reverse().map(post => {
      if (post.bouncer === 'Great') {
@@ -87,12 +94,14 @@ function NewsFeed() {
      
 
                  return (
+                   <div>
                    <div style={styleDiv} key={post._id}> {(post.date)} 
                        <div style={styleSpan}>{post.username}: <strong>
                          <Link to={`/bars/${post.urlName}`}>{post.barName}</Link>:  
                          </strong>
                          <span> had a <span style={time}>{post.time} minute wait</span></span>.</div>
                          <div> {post.comment}</div><div> Bouncer experience: <span style={badge}>{post.bouncer}</span>.</div>
+                   </div>
                    </div>)}
  )}</div>
 
