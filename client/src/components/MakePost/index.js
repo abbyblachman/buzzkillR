@@ -128,7 +128,7 @@ function MakePost() {
             name="time"
             onChange={handleTimeChange}
             type="number"
-            placeholder="time"
+            placeholder="wait time"
           />
           <input
             value={comment}
