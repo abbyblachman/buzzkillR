@@ -17,21 +17,19 @@ function Logout () {
 
   return (
     <header id="header">
-          <nav>
-          {/* className="navbar navbar-default navbar-fixed-top menu" */}
-          <div className="container">
-              {/* <div className="navbar-header"> 
-                              <a className="navbar-brand"><img src="images/logo.png" alt="logo" /></a>
-                              <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                  <span className="sr-only">Toggle navigation</span>
-                  <span className="icon-bar" />
-                  <span className="icon-bar" />
-                  <span className="icon-bar" />
-                </button>
-              </div> */}
-              <div> 
-              {/* className="collapse navbar-collapse" id="bs-example-navbar-collapse-1" */}
-                <ul className="nav navbar-nav navbar-right main-menu">
+    <nav className="navbar navbar-default navbar-fixed-top menu">
+    <div className="container">
+        <div className="navbar-header"> 
+                        <a className="navbar-brand"><img src="images/logo.png" alt="logo" /></a>
+                        <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span className="sr-only">Toggle navigation</span>
+            <span className="icon-bar" />
+            <span className="icon-bar" />
+            <span className="icon-bar" />
+          </button>
+        </div>
+        <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul className="nav navbar-nav navbar-right main-menu">
           <li className="nav-item">
             <Link
               to="/login"

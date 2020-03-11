@@ -4,8 +4,6 @@ import HeatLocationMap from "../components/HeatLocationMap";
 
 function HotBars() {
   return <>
-    <SearchMap />
-    <HeatLocationMap />
   </>;
 }
 

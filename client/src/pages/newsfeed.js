@@ -45,8 +45,12 @@ function NewsFeed() {
 
   
  return (
-   <div>
-     <BarList></BarList>
+
+
+     
+
+   <div style = {{paddingTop: 100, marginLeft: 175}}>
+   <BarList></BarList>
       <MakePost></MakePost>
    {newsFeedPosts.slice(0).reverse().map(post => {
      if (post.bouncer === 'Great') {
