@@ -9,9 +9,20 @@ const PORT = process.env.PORT || 3002;
 app.use(express.static(path.join(__dirname, './client')));
 
 /*React root*/
-app.get(“*”, (req, res) => {
+app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname + "./client/public/index.html"));
   });
+
+  app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");
+    res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    next();
+    });
+    app.options("*", cors());
 
 // Define middleware here - so that you can pass raw json into the body 
 app.use(express.urlencoded({ extended: true }));
