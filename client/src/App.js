@@ -9,7 +9,7 @@ import SearchBar from "./pages/SearchBar";
 import Wrapper from "./components/Wrapper";
 import MakePost from "./components/MakePost";
 import HomeFeatures from "./components/HomeFeatures";
-import HomeDownload from "./components/HomeDownload";
+import HeatLocationMap from "./components/HeatLocationMap";
 import Login from "./components/Login";
 import HomeLiveFeed from "./components/HomeLiveFeed";
 import Footer from "./components/Footer";
@@ -41,7 +41,7 @@ function App() {
         </div>
       </Router>
       <div>
-        {/* <HomeLiveFeed /> */}
+        <HeatLocationMap />
         <Footer />
       </div>
     </>
