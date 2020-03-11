@@ -17,7 +17,7 @@ app.get('*', (req, res) => {
 });
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+  app.use(express.static("public"));
 }
 
   app.use(function(req, res, next) {
