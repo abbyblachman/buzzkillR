@@ -5,6 +5,14 @@ const routes = require('./routes');
 const app = express();
 const PORT = process.env.PORT || 3002;
 
+/*Adds the react production build to serve react requests*/
+app.use(express.static(path.join(__dirname, './client')));
+
+/*React root*/
+app.get(“*”, (req, res) => {
+  res.sendFile(path.join(__dirname + "./client/public/index.html"));
+  });
+
 // Define middleware here - so that you can pass raw json into the body 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
