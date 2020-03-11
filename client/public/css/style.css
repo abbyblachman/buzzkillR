@@ -459,7 +459,7 @@ textarea{
   background-position: center;
 	background-size: cover;
 	width: 100%;
-	min-height: 550px;
+	min-height: 450px;
 	position: relative;
 	top: 0;
 }
@@ -472,9 +472,9 @@ textarea{
   background: linear-gradient(to bottom, rgba(43,57,144,.8), rgba(39,170,225,1) 65%);
   position: absolute;
   width: 340px;
-  min-height: 600px;
+  min-height: 400px;
   top: 0;
-  padding: 40px 10px;
+  padding: 70px 10px;
   text-align: center;
   color: #fff;
   z-index: 1000;
