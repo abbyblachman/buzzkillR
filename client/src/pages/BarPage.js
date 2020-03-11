@@ -129,12 +129,22 @@ function BarPage() {
         padding: '0.2rem'
       }
      }
+     if (post.time > 20) {
+       var time = {
+         color: 'red'
+       }
+     }
+     if (post.time <= 5) {
+      var time = {
+        color: 'green'
+      }
+    }
                  return (
                   <div style={styleDiv} key={post._id}> {(post.date)} 
                   <div style={styleSpan}>{post.username}: <strong>
                     {post.barName}:  
                     </strong>
-                    <span> had a {post.time} minute wait</span>.</div>
+                    <span> had a <span style={time}>{post.time} minute wait</span></span>.</div>
                     <div> {post.comment}</div><div> Bouncer experience: <span style={badge}>{post.bouncer}</span>.</div>
               </div>)}
  )}</div>
