@@ -145,7 +145,7 @@ function MakePost() {
           <option value="Fine">Fine</option>
           <option value="Bad">Bad</option>
         </select>
-          <button onClick={handleFormSubmit}>Submit</button>
+          <button onClick={handleFormSubmit} className="btn btn-primary mb-2">Submit</button>
         </form>
       </div>
 
