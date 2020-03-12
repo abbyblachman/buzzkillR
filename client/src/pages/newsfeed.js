@@ -49,7 +49,7 @@ function NewsFeed() {
 
      
 
-   <div style = {{paddingTop: 100, marginLeft: 175}}>
+   <div style = {{paddingTop: 100, marginLeft: 150, marginRight: 150}}>
    <BarList></BarList>
       <MakePost></MakePost>
    {newsFeedPosts.slice(0).reverse().map(post => {

@@ -95,7 +95,7 @@ function BarPage() {
 
   
  return (
-   <div>
+   <div style = {{paddingTop: 100, marginLeft: 150, marginRight: 150}}>
      <div className={style}>
     <LinearGraph></LinearGraph>
     </div>
