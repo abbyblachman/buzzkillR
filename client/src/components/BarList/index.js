@@ -52,7 +52,7 @@ const style = {
            <form className="form" action="/action_page.php">
             <label for="bars">Search for a bar:</label>
             <input name="barName" type="text" placeholder="bar name" onChange={handleSearchChange}></input>
-            <button onClick={handleFormSubmit}>Submit</button>
+            <button onClick={handleFormSubmit} className="btn btn-primary mb-2">Submit</button>
             </form>
             <span style={style}>{results}</span>
         </div>
