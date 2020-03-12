@@ -111,7 +111,7 @@ const style = {
 
     return (
       <div style={style}>
-        <h2>Wait times by hour</h2>
+        <h2>Wait Times By Hour</h2>
         <HorizontalBar data={data}/>
       </div>
     );
