@@ -31,7 +31,7 @@ const [passWord, setPassword] = useState("");
     
 
     axios
-    .get(`http://localhost:3002/api/appUsers/${userName}`, 
+    .get(`https://cors-anywhere.herokuapp.com/http://localhost:3002/api/appUsers/${userName}`, 
     console.log('in the first axios call'))
     .then(res => {
       console.log('in the res')
@@ -41,7 +41,7 @@ const [passWord, setPassword] = useState("");
       }
       else {
         axios
-        .post(`http://localhost:3002/api/appUsers`,
+        .post(`https://cors-anywhere.herokuapp.com/http://localhost:3002/api/appUsers`,
         console.log('i aam in the post'),
         {
           username: userName, 
@@ -54,7 +54,7 @@ const [passWord, setPassword] = useState("");
             }
         
             localStorage.setItem("newUser", JSON.stringify(newUser))
-            window.location.href = 'http://localhost:3000/newsfeed';
+            window.location.href = 'https://cors-anywhere.herokuapp.com/http://localhost:3000/newsfeed';
           
           })
           .catch(err => console.log(err));

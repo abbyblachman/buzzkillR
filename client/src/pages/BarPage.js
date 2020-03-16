@@ -47,7 +47,7 @@ function BarPage() {
     // console.log(window.location)
     // }
     axios
-      .get(`http://localhost:3002/api/bars/${urlName}`)
+      .get(`https://cors-anywhere.herokuapp.com/http://localhost:3002/api/bars/${urlName}`)
       .then(res => {
           // console.log(res.data.posts);
         // console.log(res.data)
@@ -95,7 +95,7 @@ function BarPage() {
 
   
  return (
-   <div style = {{paddingTop: 100, marginLeft: 150, marginRight: 150}}>
+   <div>
      <div className={style}>
     <LinearGraph></LinearGraph>
     </div>

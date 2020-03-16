@@ -17,7 +17,7 @@ function BarList () {
         let url = barSearch.replace(/\s/g, '').toLowerCase();
         event.preventDefault();
         axios
-        .get(`http://localhost:3002/api/bars/${url}`)
+        .get(`https://cors-anywhere.herokuapp.com/http://localhost:3002/api/bars/${url}`)
         .then(res => {
             // console.log(res.data);
             if (res.data !== null ) {
@@ -52,7 +52,7 @@ const style = {
            <form className="form" action="/action_page.php">
             <label for="bars">Search for a bar:</label>
             <input name="barName" type="text" placeholder="bar name" onChange={handleSearchChange}></input>
-            <button onClick={handleFormSubmit} className="btn btn-primary mb-2">Submit</button>
+            <button onClick={handleFormSubmit}>Submit</button>
             </form>
             <span style={style}>{results}</span>
         </div>

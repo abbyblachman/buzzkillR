@@ -37,7 +37,7 @@ function API () {
   let path = window.location.pathname;
 let part = path.split('/').pop();
 axios
-  .get(`http://localhost:3002/api/bars/${part}`)
+  .get(`https://cors-anywhere.herokuapp.com/http://localhost:3002/api/bars/${part}`)
   .then(res => {
     res.data.posts.forEach(post => {
       if (post.formattedDate === '8 pm') {
@@ -111,7 +111,7 @@ const style = {
 
     return (
       <div style={style}>
-        <h2>Wait Times By Hour</h2>
+        <h2>Wait times by hour</h2>
         <HorizontalBar data={data}/>
       </div>
     );

@@ -50,7 +50,7 @@ function MakePost() {
     // console.log(userName.match.params.id)
     // Preventing the default behavior of the form submit (which is to refresh the page)
     let parsedName = (barName.replace(/\s/g, '')).toLowerCase();
-    axios.post(`http://localhost:3002/api/posts`, 
+    axios.post(`https://cors-anywhere.herokuapp.com/http://localhost:3002/api/posts`, 
     {username: parsedInfo.username, barName: barName, urlName: parsedName, time: time, comment: comment, bouncer: bouncer, date: now, formattedDate: formattedDate, dayOfWeek: dayOfWeek})
     .then(res => {
       // console.log(res);
@@ -60,11 +60,11 @@ function MakePost() {
       console.log(error);
     });
     
-    axios.get(`http://localhost:3002/api/bars/${parsedName}`)
+    axios.get(`https://cors-anywhere.herokuapp.com/http://localhost:3002/api/bars/${parsedName}`)
     .then(res => {
       // console.log(res.data)
       if (res.data === null) {
-        axios.post(`http://localhost:3002/api/bars`, 
+        axios.post(`https://cors-anywhere.herokuapp.com/http://localhost:3002/api/bars`, 
         {barName: barName, urlName: parsedName, posts: {username: parsedInfo.username, time: time, comment: comment, bouncer: bouncer, date: now, formattedDate: formattedDate, dayOfWeek: dayOfWeek}})
         .then(res => {
           // console.log(res);
@@ -77,7 +77,7 @@ function MakePost() {
       else  {
         console.log('they are the same')
         axios
-        .put(`http://localhost:3002/api/bars/${parsedName}`,
+        .put(`https://cors-anywhere.herokuapp.com/http://localhost:3002/api/bars/${parsedName}`,
        
           {username: parsedInfo.username, time: time, comment: comment, bouncer: bouncer, date: now, formattedDate: formattedDate, dayOfWeek: dayOfWeek}
         )
@@ -145,7 +145,7 @@ function MakePost() {
           <option value="Fine">Fine</option>
           <option value="Bad">Bad</option>
         </select>
-          <button onClick={handleFormSubmit} className="btn btn-primary mb-2">Submit</button>
+          <button onClick={handleFormSubmit}>Submit</button>
         </form>
       </div>
 

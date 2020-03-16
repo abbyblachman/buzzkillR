@@ -31,14 +31,14 @@ const [passWord, setPassword] = useState("");
     
 
     axios
-    .get(`http://localhost:3002/api/appUsers/${userName}`)
+    .get(`https://cors-anywhere.herokuapp.com/http://localhost:3002/api/appUsers/${userName}`)
     .then(res => {
       console.log(res.data.password)
       if (res.data.password !== passWord) {
         alert('Incorrect password.')
       }
       else if (res.data.password === passWord) {
-        window.location.href = 'http://localhost:3000/newsfeed';
+        window.location.href = 'https://cors-anywhere.herokuapp.com/http://localhost:3000/newsfeed';
         const newUser = {
           username: userName, 
           isLoggedIn: 1 
