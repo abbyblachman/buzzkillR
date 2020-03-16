@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3002;
 
 /*Adds the react production build to serve react requests*/
 
-// app.use(cors())
+app.use(cors())
 
 
 
@@ -22,16 +22,16 @@ app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
 });
 
-  // app.use(function(req, res, next) {
-  //   res.header("Access-Control-Allow-Origin", "*");
-  //   res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");
-  //   res.header(
-  //   "Access-Control-Allow-Headers",
-  //   "Origin, X-Requested-With, Content-Type, Accept"
-  //   );
-  //   next();
-  //   });
-  //   app.options("/*", cors());
+  app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");
+    res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    next();
+    });
+    app.options("/*", cors());
 
 // Define middleware here - so that you can pass raw json into the body 
 app.use(express.urlencoded({ extended: true }));
