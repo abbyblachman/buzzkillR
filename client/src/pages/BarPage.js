@@ -141,10 +141,8 @@ function BarPage() {
     }
                  return (
                   <div style={styleDiv} key={post._id}> {(post.date)} 
-                  <div style={styleSpan}>{post.username}: <strong>
-                    {post.barName}:  
-                    </strong>
-                    <span> had a <span style={time}>{post.time} minute wait</span></span>.</div>
+                  <div style={styleSpan}>{post.username}: 
+                    <span>This bar had a <span style={time}>{post.time} minute wait</span></span>.</div>
                     <div> {post.comment}</div><div> Bouncer experience: <span style={badge}>{post.bouncer}</span>.</div>
               </div>)}
  )}</div>
