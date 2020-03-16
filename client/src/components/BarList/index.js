@@ -17,7 +17,7 @@ function BarList () {
         let url = barSearch.replace(/\s/g, '').toLowerCase();
         event.preventDefault();
         axios
-        .get(`https://cors-anywhere.herokuapp.com/http://localhost:3002/api/bars/${url}`)
+        .get(`/api/bars/${url}`)
         .then(res => {
             // console.log(res.data);
             if (res.data !== null ) {

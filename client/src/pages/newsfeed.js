@@ -23,7 +23,7 @@ function NewsFeed() {
     //   console.log('there is a user logged in')
     // }
     axios
-      .get("http://localhost:3002/api/posts")
+      .get("/api/posts")
       .then(res => {
         // console.log(res.data)
         setNewsFeedPosts(res.data)
@@ -49,7 +49,7 @@ function NewsFeed() {
 
      
 
-   <div style = {{paddingTop: 100, marginLeft: 150, marginRight: 150}}>
+   <div style = {{paddingTop: 100, marginLeft: 175}}>
    <BarList></BarList>
       <MakePost></MakePost>
    {newsFeedPosts.slice(0).reverse().map(post => {

@@ -77,7 +77,7 @@ function MakePost() {
       else  {
         console.log('they are the same')
         axios
-        .put(`https://cors-anywhere.herokuapp.com/http://localhost:3002/api/bars/${parsedName}`,
+        .put(`/api/bars/${parsedName}`,
        
           {username: parsedInfo.username, time: time, comment: comment, bouncer: bouncer, date: now, formattedDate: formattedDate, dayOfWeek: dayOfWeek}
         )

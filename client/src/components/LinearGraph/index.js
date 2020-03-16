@@ -37,7 +37,7 @@ function API () {
   let path = window.location.pathname;
 let part = path.split('/').pop();
 axios
-  .get(`https://cors-anywhere.herokuapp.com/http://localhost:3002/api/bars/${part}`)
+  .get(`/api/bars/${part}`)
   .then(res => {
     res.data.posts.forEach(post => {
       if (post.formattedDate === '8 pm') {

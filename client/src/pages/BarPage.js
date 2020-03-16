@@ -47,7 +47,7 @@ function BarPage() {
     // console.log(window.location)
     // }
     axios
-      .get(`https://cors-anywhere.herokuapp.com/http://localhost:3002/api/bars/${urlName}`)
+      .get(`/api/bars/${urlName}`)
       .then(res => {
           // console.log(res.data.posts);
         // console.log(res.data)
