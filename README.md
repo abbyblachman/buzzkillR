@@ -1,8 +1,12 @@
-# Create React Express App
+# BuzzkillR
 
-## About This Boilerplate
+## About This Application
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+BuzzkillR is a user friendly social media application that logs wait times and bouncer behavior for local bars, so you never leave for a night out unprepared.
+
+## How the app is built 
+
+This application is built using Node/Express/React.
 
 The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
 
